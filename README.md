@@ -159,17 +159,12 @@ Kesimpulan:
    Jika file requirements.txt belum tersedia, Anda dapat membuatnya dengan menambahkan pustaka berikut:
    
    pandas
-   
    scikit-learn
-   
    numpy
-   
    matplotlib
-   
    seaborn
-   
    joblib
-
+ 
 ---
 
 ## 🧠 Langkah-langkah Analisis
@@ -184,7 +179,7 @@ Kesimpulan:
    Jalankan skrip ini untuk mempersiapkan data sebelum analisis lebih lanjut.
 
 2. Analisis TF-IDF
-   Skrip **Analyze_TF-IDF.py** digunakan untuk:
+   Skrip **TF-IDF.py** digunakan untuk:
    
    - Menghitung representasi fitur menggunakan metode TF-IDF.
    - Menampilkan visualisasi distribusi frekuensi kata.
