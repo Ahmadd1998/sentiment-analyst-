@@ -38,6 +38,25 @@ G --> H[Confusion Matrix\nAkurasi, Precision, Recall, F1-Score]
 
 ---
 
+## ⚙️ Metode
+1. **Preprocessing**
+   - Case folding
+   - Tokenisasi
+   - Stopword removal (Bahasa Indonesia)
+   - Stemming (Sastrawi)
+   - TF-IDF Vectorization
+2. **Model**
+   - Random Forest
+   - Hyperparameter tuning dengan:
+     - Grid Search CV
+     - Random Search CV
+3. **Evaluasi**
+   - Accuracy, Precision, Recall, F1-score
+   - Confusion Matrix
+   - Error rate
+     
+---
+
 ## 📈 **Hasil Utama**
 | Metode               | Akurasi | Error Rate | Waktu Komputasi |
 |----------------------|---------|------------|-----------------|
