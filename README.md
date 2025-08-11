@@ -13,7 +13,7 @@ Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram ber
 ### 🔄 Diagram Alur Proses (Pipeline)
 Dengan alur proses yang digunakan sebagai berikut
 ```mermaid
-flowchart LR
+flowchart TD
 A[Dataset Komentar Instagram] --> B[Preprocessing Teks]
 B --> C[TF-IDF Vectorization]
 C --> D[Split Data - Train/Test]
