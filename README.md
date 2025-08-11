@@ -114,7 +114,7 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
 
 ---
 
-##📊 **Uji Statistik (Paired t-test)**
+## 📈 Uji Statistik (Paired t-test) 
 1. RF Normal vs Grid Search
    
 | No | Metrics | t-statistic | p-value | Significant (p<0.05) |
