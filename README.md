@@ -52,8 +52,12 @@ G --> H[Confusion Matrix\nAkurasi, Precision, Recall, F1-Score]
 ---
 
 Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
+Visualisasi Word Cloud menunjukkan kata-kata yang paling sering muncul pada komentar Instagram. Ukuran kata berbanding lurus dengan frekuensi kemunculannya, sehingga kata yang lebih besar memiliki tingkat kemunculan lebih tinggi.
 ![Hasil WordCloud](images/Wordcloud.png)  
 *Visualisasi kata kunci menggunakan TF-IDF*
+
+**Insight**: 
+Word Cloud: menonjolkan kata-kata bermuatan emosi tertentu yang relevan untuk klasifikasi sentimen.
 
 ---
 
@@ -84,6 +88,9 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
 ![Perbandingan Akurasi](images/Grafik_Evaluation.png)  
 *Random Search lebih cepat dan akurat dibanding Grid Search*
 
+- Grafik membandingkan akurasi model Random Forest yang dioptimasi menggunakan Grid Search dan Random Search.
+- Hasil menunjukkan bahwa Grid Search memberikan akurasi sedikit lebih tinggi dibanding Random Search, meskipun perbedaannya tidak terlalu signifikan.
+- Perbandingan Akurasi: mengaitkan perbedaan performa dengan jumlah kombinasi hyperparameter yang diuji oleh masing-masing metode.
 
 ## 🚀 **Cara Menjalankan**
 1. **Clone Repo**:
