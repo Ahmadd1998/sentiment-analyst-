@@ -1,17 +1,21 @@
 # 📊 Optimasi Hyperparameter Random Forest untuk Analisis Sentimen Instagram (Bahasa Indonesia)
 
-# Sentiment-Analyst
-Proyek ini bertujuan untuk melakukan analisis sentimen pada komentar Instagram berbahasa Indonesia menggunakan algoritma Random Forest. Algoritma ini dipilih karena kemampuannya dalam menangani data yang kompleks dan tidak linear, sehingga cocok untuk karakteristik teks informal dan singkat seperti komentar media sosial. Dataset yang digunakan terdiri dari kumpulan komentar yang sudah diberi label sentimen positif atau negatif. Untuk meningkatkan performa model, dilakukan tahapan preprocessing yang meliputi pembersihan teks, penghapusan stopwords, serta transformasi data menjadi representasi fitur yang dapat dipahami oleh model. Selanjutnya, dilakukan optimasi hyperparameter menggunakan teknik RandomizedSearchCV (Random Search) untuk mencari kombinasi parameter terbaik. Dengan pendekatan ini, model berhasil mencapai akurasi hingga 90%, menunjukkan efektivitas metode optimasi dan preprocessing dalam mengatasi tantangan analisis sentimen pada teks informal bahasa Indonesia.
+## Sentiment-Analyst
 
-## 🎯 **Apa Ini?**
-Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram berbahasa Indonesia dengan:
-- **Fokus Utama**: Membandingkan teknik optimasi hyperparameter (**Grid Search** vs **Random Search**) pada algoritma Random Forest.
-- **Problem Unik**: Menangani karakteristik teks informal (singkatan, bahasa gaul, emoji) seperti _"gemoy bgt sih 😍"_ atau _"pdhl gk worth it"_.
-- **Dataset**: 400 komentar berlabel (200 positif + 200 negatif).
+Proyek ini bertujuan menganalisis sentimen komentar Instagram berbahasa Indonesia menggunakan algoritma Random Forest, yang efektif menangani data kompleks dan tidak linear. Dataset berisi komentar yang sudah dilabeli sentimen positif atau negatif. Preprocessing dilakukan untuk membersihkan teks informal, menghapus stopwords, dan mentransformasikan data ke fitur yang dapat dipahami model. Optimasi hyperparameter menggunakan RandomizedSearchCV (Random Search) berhasil meningkatkan akurasi hingga 90%, membuktikan efektivitas metode ini dalam mengatasi tantangan analisis sentimen teks informal.
 
+---
 
-### 🔄 Diagram Alur Proses (Pipeline)
-Dengan alur proses yang digunakan sebagai berikut
+## 🎯 Apa Ini?
+
+- **Fokus:** Membandingkan optimasi hyperparameter **Grid Search** vs **Random Search** pada Random Forest.
+- **Problem:** Menangani teks informal (singkatan, bahasa gaul, emoji), contoh: _"gemoy bgt sih 😍"_ atau _"pdhl gk worth it"_.
+- **Dataset:** 400 komentar berlabel (200 positif, 200 negatif).
+
+---
+
+## 🔄 Pipeline Proses
+
 ```mermaid
 flowchart TD
 A[Dataset Komentar Instagram] --> B[Preprocessing Teks]
@@ -23,7 +27,7 @@ E --> E2[Random Search]
 E1 --> F[Training Random Forest]
 E2 --> F[Training Random Forest]
 F --> G[Evaluasi Model]
-G --> H[Confusion Matrix\nAkurasi, Precision, Recall, F1-Score]
+G --> H[Confusion Matrix, Akurasi, Precision, Recall, F1-Score]
 ```
 
 ---
@@ -73,7 +77,7 @@ G --> H[Confusion Matrix\nAkurasi, Precision, Recall, F1-Score]
 Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
 
 ![Hasil WordCloud](images/Wordcloud.png)  
-*Visualisasi kata kunci menggunakan TF-IDF*
+*Visualisasi kata kunci dari TF-IDF menunjukkan frekuensi kemunculan kata yang memengaruhi sentimen.*
 
 **Insight**
 - Visualisasi Word Cloud menunjukkan kata-kata yang paling sering muncul pada komentar Instagram. Ukuran kata berbanding lurus dengan frekuensi kemunculannya, sehingga kata yang lebih besar memiliki tingkat kemunculan lebih tinggi.
