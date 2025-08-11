@@ -169,6 +169,7 @@ Kesimpulan:
 
 ## 🧠 Langkah-langkah Analisis
 1. Preprocessing Teks
+   
    Skrip **Preprocessing.py** digunakan untuk melakukan pembersihan dan normalisasi teks komentar Instagram, termasuk:
    
    - Menghapus URL, mention, dan hashtag.
@@ -179,6 +180,7 @@ Kesimpulan:
    Jalankan skrip ini untuk mempersiapkan data sebelum analisis lebih lanjut.
 
 2. Analisis TF-IDF
+   
    Skrip **TF-IDF.py** digunakan untuk:
    
    - Menghitung representasi fitur menggunakan metode TF-IDF.
@@ -187,6 +189,7 @@ Kesimpulan:
    Jalankan skrip ini untuk memahami distribusi kata dalam dataset.
 
 3. Model Random Forest Tanpa Optimasi
+   
    Skrip  **RF_Normal.py** digunakan untuk:
    
    - Membangun model Random Forest dengan parameter default.
@@ -195,6 +198,7 @@ Kesimpulan:
    Jalankan skrip ini untuk mendapatkan baseline model.
 
 4. Optimasi Hyperparameter dengan Grid Search
+   
    Skrip **Grid_Search.py** digunakan untuk:
    
    - Melakukan pencarian parameter terbaik menggunakan metode Grid Search.
@@ -203,6 +207,7 @@ Kesimpulan:
    Jalankan skrip ini untuk meningkatkan performa model.
 
 5. Optimasi Hyperparameter dengan Random Search
+    
    Skrip **Random_Search.py** digunakan untuk:
    
    - Melakukan pencarian parameter terbaik menggunakan metode Random Search.
