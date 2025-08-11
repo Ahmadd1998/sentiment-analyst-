@@ -12,7 +12,7 @@ Dengan alur proses yang digunakan sebagai berikut
 
 ### 🔄 Diagram Alur Proses (Pipeline)
 
-```mermaid
+<pre>```mermaid
 flowchart TD
     A[Dataset Komentar Instagram] --> B[Preprocessing Teks]
     B --> C[TF-IDF Vectorization]
@@ -24,7 +24,7 @@ flowchart TD
     E2 --> F[Training Model Random Forest]
     F --> G[Evaluasi Model]
     G --> H[Confusion Matrix, Akurasi, Precision, Recall, F1-Score]
-```
+```<pre>
 
 ---
 
