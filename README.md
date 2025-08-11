@@ -8,9 +8,10 @@ Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram ber
 - **Fokus Utama**: Membandingkan teknik optimasi hyperparameter (**Grid Search** vs **Random Search**) pada algoritma Random Forest.
 - **Problem Unik**: Menangani karakteristik teks informal (singkatan, bahasa gaul, emoji) seperti _"gemoy bgt sih 😍"_ atau _"pdhl gk worth it"_.
 - **Dataset**: 400 komentar berlabel (200 positif + 200 negatif).
-Dengan alur proses yang digunakan sebagai berikut
+
 
 ### 🔄 Diagram Alur Proses (Pipeline)
+Dengan alur proses yang digunakan sebagai berikut
 ```mermaid
 flowchart LR
 A[Dataset Komentar Instagram] --> B[Preprocessing Teks]
