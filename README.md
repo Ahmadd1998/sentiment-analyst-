@@ -112,8 +112,29 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
 - Hasil menunjukkan bahwa Grid Search memberikan akurasi sedikit lebih tinggi dibanding Random Search, meskipun perbedaannya tidak terlalu signifikan.
 - Perbandingan Akurasi: mengaitkan perbedaan performa dengan jumlah kombinasi hyperparameter yang diuji oleh masing-masing metode.
 
-## 🚀 **Cara Menjalankan**
-1. **Clone Repo**:
-   ```bash
-   git clone https://github.com/username/skripsi-sentiment-analysis.git
-   cd skripsi-sentiment-analysis
+🚀 Cara Menjalankan
+1. Clone Repository
+   git clone https://github.com/username/sentiment-analyst.git
+   cd sentiment-analyst
+   
+2. Buat Virtual Environment (Opsional, tapi disarankan)
+   python -m venv venv
+   source venv/bin/activate     # Untuk Linux/Mac
+   venv\Scripts\activate        # Untuk Windows
+   
+3. Install Dependencies
+   pip install -r requirements.txt
+   
+4. Siapkan Dataset
+   Letakkan file dataset CSV di folder dataset/ (jika belum ada, buat foldernya).
+   Pastikan nama file sesuai yang digunakan di script Python, contoh:
+   
+   data/dataset_instagram_cyberbullying.csv
+   
+6. Jalankan Script Analisis Sentimen
+   python main.py
+   
+7. Lihat Hasil
+   - Word Cloud akan tersimpan di folder output/wordcloud.png
+   - Confusion Matrix & Grafik Perbandingan Akurasi akan tersimpan di folder output/
+   - Console akan menampilkan Akurasi, Precision, Recall, dan F1-Score.
