@@ -112,7 +112,9 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
 - Hasil menunjukkan bahwa Grid Search memberikan akurasi sedikit lebih tinggi dibanding Random Search, meskipun perbedaannya tidak terlalu signifikan.
 - Perbandingan Akurasi: mengaitkan perbedaan performa dengan jumlah kombinasi hyperparameter yang diuji oleh masing-masing metode.
 
-**🚀 Cara Menjalankan**
+---
+
+## 🚀 **Cara Menjalankan**
 1. Clone Repository
    
    git clone https://github.com/username/sentiment-analyst.git
