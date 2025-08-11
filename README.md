@@ -42,9 +42,11 @@ Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
 
 ## 🔍 Confusion Matrix
 ![Confusion Matrix](images/Confusion_Grid.png)
+
 Menunjukkan klasifikasi sentimen yang lebih akurat dengan jumlah True Positive dan True Negative lebih tinggi serta kesalahan klasifikasi lebih rendah dibandingkan Random Search.
 
 ![Confusion Matrix](images/Confusion_Random.png)
+
 Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan False Negative sedikit lebih banyak dibandingkan Grid Search.
 
 ---
