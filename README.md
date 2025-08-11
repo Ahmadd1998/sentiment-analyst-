@@ -1,9 +1,7 @@
 # 📊 Optimasi Hyperparameter Random Forest untuk Analisis Sentimen Instagram (Bahasa Indonesia)
 
 # Sentiment-Analyst
-Proyek analisis sentimen komentar Instagram Bahasa Indonesia dengan optimasi hyperparameter Random Forest. Mencapai akurasi 90% menggunakan Random Search dan preprocessing teks informal.
-
-Proyek ini bertujuan untuk menganalisis sentimen komentar Instagram berbahasa Indonesia menggunakan algoritma Random Forest. Dataset yang digunakan terdiri dari komentar-komentar yang telah dilabeli dengan sentimen positif atau negatif. Algoritma Random Forest dipilih karena kemampuannya dalam menangani data yang kompleks dan tidak linear. Untuk meningkatkan performa model, dilakukan optimasi hyperparameter menggunakan teknik RandomizedSearchCV.
+Proyek ini bertujuan untuk melakukan analisis sentimen pada komentar Instagram berbahasa Indonesia menggunakan algoritma Random Forest. Algoritma ini dipilih karena kemampuannya dalam menangani data yang kompleks dan tidak linear, sehingga cocok untuk karakteristik teks informal dan singkat seperti komentar media sosial. Dataset yang digunakan terdiri dari kumpulan komentar yang sudah diberi label sentimen positif atau negatif. Untuk meningkatkan performa model, dilakukan tahapan preprocessing yang meliputi pembersihan teks, penghapusan stopwords, serta transformasi data menjadi representasi fitur yang dapat dipahami oleh model. Selanjutnya, dilakukan optimasi hyperparameter menggunakan teknik RandomizedSearchCV (Random Search) untuk mencari kombinasi parameter terbaik. Dengan pendekatan ini, model berhasil mencapai akurasi hingga 90%, menunjukkan efektivitas metode optimasi dan preprocessing dalam mengatasi tantangan analisis sentimen pada teks informal bahasa Indonesia.
 
 ## 🎯 **Apa Ini?**
 Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram berbahasa Indonesia dengan:
@@ -246,3 +244,7 @@ Untuk memuat dan menggunakan model:
 **predictions = model.predict(new_data)**
 
 Dengan mengikuti langkah-langkah di atas, Anda dapat menjalankan dan mengeksplorasi proyek analisis sentimen ini. Pastikan untuk menyesuaikan jalur file dan parameter sesuai dengan kebutuhan Anda.
+
+
+---
+Proyek ini dilisensikan di bawah MIT License. Jika Anda ingin berkontribusi, silakan fork repositori ini dan kirim pull request dengan perubahan yang diusulkan.
