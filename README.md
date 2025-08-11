@@ -3,7 +3,7 @@ Proyek analisis sentimen komentar Instagram Bahasa Indonesia dengan optimasi hyp
 
 # 📊 Optimasi Hyperparameter Random Forest untuk Analisis Sentimen Instagram (Bahasa Indonesia)
 
-![WordCloud Contoh](./images/wordcloud.png)  
+![WordCloud Contoh](image/wordcloud.png)  
 *Visualisasi kata kunci menggunakan TF-IDF*
 
 ## 🎯 **Apa Ini?**
