@@ -1,6 +1,6 @@
 # 📊 Optimasi Hyperparameter Random Forest untuk Analisis Sentimen Instagram (Bahasa Indonesia)
 
-# sentiment-analyst-
+# sentiment-analyst
 Proyek analisis sentimen komentar Instagram Bahasa Indonesia dengan optimasi hyperparameter Random Forest. Mencapai akurasi 90% menggunakan Random Search dan preprocessing teks informal.
 
 Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
@@ -39,7 +39,7 @@ Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram ber
 ---
 
 ## 📊 Perbandingan Akurasi Model
-![Perbandingan Akurasi](images/grafik hasil eval.png)  
+![Perbandingan Akurasi](images/Grafik_Evaluation.png)  
 *Random Search lebih cepat dan akurat dibanding Grid Search*
 
 
