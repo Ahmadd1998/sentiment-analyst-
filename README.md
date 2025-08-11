@@ -13,30 +13,26 @@ Dengan alur proses yang digunakan sebagai berikut
 ### 🔄 Diagram Alur Proses (Pipeline)
 ```mermaid
 flowchart TD
-    A[📂 Kumpulkan Data Komentar Instagram] --> B[🧹 Praproses Data]
-    B --> C[🔤 Ekstraksi Fitur (TF-IDF)]
-    C --> D[✂️ Split Data (Train/Test)]
-    D --> E[⚙️ Training Model (Random Forest)]
-    E --> F1[🔍 Optimasi Hyperparameter (Grid Search)]
-    E --> F2[🎲 Optimasi Hyperparameter (Random Search)]
-    F1 --> G1[📊 Evaluasi Model (Confusion Matrix, Akurasi, dll)]
-    F2 --> G2[📊 Evaluasi Model (Confusion Matrix, Akurasi, dll)]
-    G1 --> H[⚖️ Perbandingan Hasil Grid Search vs Random Search]
-    G2 --> H
+   flowchart LR
+    A[Pengumpulan Data]:::step1 --> B[Pembersihan Data]:::step2
+    B --> C[Ekstraksi Fitur (TF-IDF)]:::step3
+    C --> D[Pembagian Data (Train/Test)]:::step4
+    D --> E[Pelatihan Model: Grid Search]:::step5
+    D --> F[Pelatihan Model: Random Search]:::step6
+    E --> G[Evaluasi Model Grid Search]:::step7
+    F --> H[Evaluasi Model Random Search]:::step8
+    G --> I[Perbandingan Hasil]:::step9
+    H --> I
 
-    classDef start fill:#f9f,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
-    classDef process fill:#bbf,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
-    classDef model fill:#bfb,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
-    classDef tuning fill:#ffb,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
-    classDef eval fill:#ffc0cb,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
-    classDef compare fill:#ffa500,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
-
-    class A start;
-    class B,C,D process;
-    class E model;
-    class F1,F2 tuning;
-    class G1,G2 eval;
-    class H compare;
+    classDef step1 fill:#ffddcc,stroke:#333,stroke-width:1px;
+    classDef step2 fill:#ccffcc,stroke:#333,stroke-width:1px;
+    classDef step3 fill:#ccccff,stroke:#333,stroke-width:1px;
+    classDef step4 fill:#fff2cc,stroke:#333,stroke-width:1px;
+    classDef step5 fill:#ffcccc,stroke:#333,stroke-width:1px;
+    classDef step6 fill:#cce5ff,stroke:#333,stroke-width:1px;
+    classDef step7 fill:#e6ccff,stroke:#333,stroke-width:1px;
+    classDef step8 fill:#d5f5e3,stroke:#333,stroke-width:1px;
+    classDef step9 fill:#f9e79f,stroke:#333,stroke-width:1px;
 ```
 
 ---
