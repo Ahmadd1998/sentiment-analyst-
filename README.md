@@ -52,12 +52,13 @@ G --> H[Confusion Matrix\nAkurasi, Precision, Recall, F1-Score]
 ---
 
 Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
-Visualisasi Word Cloud menunjukkan kata-kata yang paling sering muncul pada komentar Instagram. Ukuran kata berbanding lurus dengan frekuensi kemunculannya, sehingga kata yang lebih besar memiliki tingkat kemunculan lebih tinggi.
+
 ![Hasil WordCloud](images/Wordcloud.png)  
 *Visualisasi kata kunci menggunakan TF-IDF*
 
-**Insight**: 
-Word Cloud: menonjolkan kata-kata bermuatan emosi tertentu yang relevan untuk klasifikasi sentimen.
+**Insight**
+- Visualisasi Word Cloud menunjukkan kata-kata yang paling sering muncul pada komentar Instagram. Ukuran kata berbanding lurus dengan frekuensi kemunculannya, sehingga kata yang lebih besar memiliki tingkat kemunculan lebih tinggi.
+- menonjolkan kata-kata bermuatan emosi tertentu yang relevan untuk klasifikasi sentimen.
 
 ---
 
