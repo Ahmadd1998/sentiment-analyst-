@@ -126,8 +126,8 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
    pip install -r requirements.txt
    
 4. Siapkan Dataset
-   Letakkan file dataset CSV di folder dataset/ (jika belum ada, buat foldernya).
-   Pastikan nama file sesuai yang digunakan di script Python, contoh:
+   - Letakkan file dataset CSV di folder dataset/ (jika belum ada, buat foldernya).
+   - Pastikan nama file sesuai yang digunakan di script Python, contoh:
    
    data/dataset_instagram_cyberbullying.csv
    
