@@ -115,6 +115,8 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
 ---
 
 ##📊 **Uji Statistik (Paired t-test)**
+1. RF Normal vs Grid Search
+   
 | No | Metrics | t-statistic | p-value | Significant (p<0.05) |
 |----|---------|------------|-----------------|---------------|
 |  1  | Accuracy | 9.750     | 0.006         |   ✅ Yes   |
@@ -128,6 +130,7 @@ Kesimpulan:
 - Cocok untuk aplikasi yang meminimalkan False Positives (contoh: deteksi spam, diagnosis penyakit).
 
 2. RF Normal vs Random Search
+   
 | No | Metrics | t-statistic | p-value | Significant (p<0.05) |
 |----|---------|------------|-----------------|---------------|
 |  1  | Accuracy | 4.221     | 0.013         |   ❌ No   |
