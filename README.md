@@ -114,6 +114,33 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
 
 ---
 
+##📊 **Uji Statistik (Paired t-test)**
+| No | Metrics | t-statistic | p-value | Significant (p<0.05) |
+|----|---------|------------|-----------------|---------------|
+|  1  | Accuracy | 9.750     | 0.006         |   ✅ Yes   |
+|  2  | Recall | 2.236    | 0.089        |   ❌ No   |   
+|  3  | Precision | 21.50    | 0.000    |   ✅ Yes   |
+|  4  | F1-Score   | 1.359  | 0.235  |   ❌ No   |
+
+Kesimpulan:
+- Grid Search meningkatkan Accuracy dan Precision secara signifikan.
+- Tidak ada perbedaan signifikan pada Recall dan F1-score.
+- Cocok untuk aplikasi yang meminimalkan False Positives (contoh: deteksi spam, diagnosis penyakit).
+
+2. RF Normal vs Random Search
+   | No | Metrics | t-statistic | p-value | Significant (p<0.05) |
+|----|---------|------------|-----------------|---------------|
+|  1  | Accuracy | 4.221     | 0.013         |   ❌ No   |
+|  2  | Recall | 0.620   | 0.569    |   ❌ No   |   
+|  3  | Precision | -0.965    | 0.389    |   ❌ No   |
+|  4  | F1-Score   | 7.171  | 0.002  |   ✅ Yes   |
+
+Kesimpulan:
+- Random Search meningkatkan F1-score secara signifikan → keseimbangan Precision dan Recall lebih baik.
+- Cocok untuk dataset dengan class imbalance dan kebutuhan meminimalkan FP & FN sekaligus.
+
+---
+
 ## 🚀 **Cara Menjalankan**
 1. Clone Repository
    
