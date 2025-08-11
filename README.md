@@ -13,16 +13,30 @@ Dengan alur proses yang digunakan sebagai berikut
 ### 🔄 Diagram Alur Proses (Pipeline)
 ```mermaid
 flowchart TD
-A[Dataset Komentar Instagram] --> B[Preprocessing Teks]
-B --> C[TF-IDF Vectorization]
-C --> D[Split Data - Train/Test]
-D --> E[Optimasi Hyperparameter]
-E --> E1[Grid Search]
-E --> E2[Random Search]
-E1 --> F[Training Random Forest]
-E2 --> F[Training Random Forest]
-F --> G[Evaluasi Model]
-G --> H[Confusion Matrix\nAkurasi, Precision, Recall, F1-Score]
+    A[📂 Kumpulkan Data Komentar Instagram] --> B[🧹 Praproses Data]
+    B --> C[🔤 Ekstraksi Fitur (TF-IDF)]
+    C --> D[✂️ Split Data (Train/Test)]
+    D --> E[⚙️ Training Model (Random Forest)]
+    E --> F1[🔍 Optimasi Hyperparameter (Grid Search)]
+    E --> F2[🎲 Optimasi Hyperparameter (Random Search)]
+    F1 --> G1[📊 Evaluasi Model (Confusion Matrix, Akurasi, dll)]
+    F2 --> G2[📊 Evaluasi Model (Confusion Matrix, Akurasi, dll)]
+    G1 --> H[⚖️ Perbandingan Hasil Grid Search vs Random Search]
+    G2 --> H
+
+    classDef start fill:#f9f,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
+    classDef model fill:#bfb,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
+    classDef tuning fill:#ffb,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
+    classDef eval fill:#ffc0cb,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
+    classDef compare fill:#ffa500,stroke:#333,stroke-width:2px,color:#000,font-weight:bold;
+
+    class A start;
+    class B,C,D process;
+    class E model;
+    class F1,F2 tuning;
+    class G1,G2 eval;
+    class H compare;
 ```
 
 ---
