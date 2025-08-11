@@ -158,12 +158,12 @@ Kesimpulan:
    
    Jika file requirements.txt belum tersedia, Anda dapat membuatnya dengan menambahkan pustaka berikut:
    
-   pandas
-   scikit-learn
-   numpy
-   matplotlib
-   seaborn
-   joblib
+   - pandas
+   - scikit-learn
+   - numpy
+   - matplotlib
+   - seaborn
+   - joblib
  
 ---
 
@@ -226,13 +226,16 @@ Untuk visualisasi, Anda dapat menggunakan pustaka seperti **matplotlib** dan **s
 ## 💾 Menyimpan dan Menggunakan Model
 Setelah mendapatkan model terbaik, Anda dapat menyimpannya menggunakan joblib:
 
-import joblib
-joblib.dump(best_model, 'sentiment_model.pkl')
+**import joblib**
+
+**joblib.dump(best_model, 'sentiment_model.pkl')**
 
 Untuk memuat dan menggunakan model:
 
-import joblib
-model = joblib.load('sentiment_model.pkl')
-predictions = model.predict(new_data)
+**import joblib**
+
+**model = joblib.load('sentiment_model.pkl')**
+
+**predictions = model.predict(new_data)**
 
 Dengan mengikuti langkah-langkah di atas, Anda dapat menjalankan dan mengeksplorasi proyek analisis sentimen ini. Pastikan untuk menyesuaikan jalur file dan parameter sesuai dengan kebutuhan Anda.
