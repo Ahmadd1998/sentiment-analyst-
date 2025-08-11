@@ -1,6 +1,6 @@
 # 📊 Optimasi Hyperparameter Random Forest untuk Analisis Sentimen Instagram (Bahasa Indonesia)
 
-# sentiment-analyst
+# Sentiment-Analyst
 Proyek analisis sentimen komentar Instagram Bahasa Indonesia dengan optimasi hyperparameter Random Forest. Mencapai akurasi 90% menggunakan Random Search dan preprocessing teks informal.
 
 ## 🎯 **Apa Ini?**
@@ -144,36 +144,95 @@ Kesimpulan:
 
 ---
 
-## 🚀 **Cara Menjalankan**
-1. Clone Repository
-   
-   git clone https://github.com/username/sentiment-analyst.git
-   
-   cd sentiment-analyst
-   
-3. Buat Virtual Environment (Opsional, tapi disarankan)
-   
-   python -m venv venv
-   
-   source venv/bin/activate --- # Untuk Linux/Mac
-   
-   venv\Scripts\activate    --- # Untuk Windows
-   
-4. Install Dependencies
-   
-   pip install -r requirements.txt
-   
-5. Siapkan Dataset
-   - Letakkan file dataset CSV di folder dataset/ (jika belum ada, buat foldernya)
-   - Pastikan nama file sesuai yang digunakan di script Python, contoh:
-   
-   dataset/dataset_instagram_cyberbullying.csv
-   
-6. Jalankan Script Analisis Sentimen
-   
-   python main.py
-   
-7. Lihat Hasil
-   - Word Cloud akan tersimpan di folder output/wordcloud.png
-   - Confusion Matrix & Grafik Perbandingan Akurasi akan tersimpan di folder output/
-   - Console akan menampilkan Akurasi, Precision, Recall, dan F1-Score.
+## ⚙️ Persiapan Lingkungan
+1. Clone repository:
+
+git clone https://github.com/Ahmadd1998/sentiment-analyst-.git
+cd sentiment-analyst-
+
+2. Install dependensi:
+
+Pastikan Anda memiliki Python versi 3.7 atau lebih baru. Kemudian, install dependensi yang diperlukan:
+
+pip install -r requirements.txt
+
+Jika file requirements.txt belum tersedia, Anda dapat membuatnya dengan menambahkan pustaka berikut:
+
+pandas
+scikit-learn
+numpy
+matplotlib
+seaborn
+joblib
+
+---
+
+## 🧠 Langkah-langkah Analisis
+1. Preprocessing Teks
+Skrip **Preprocessing.py** digunakan untuk melakukan pembersihan dan normalisasi teks komentar Instagram, termasuk:
+
+- Menghapus URL, mention, dan hashtag.
+- Mengubah teks menjadi huruf kecil.
+- Menghapus kata-kata tidak penting (stopwords).
+- Melakukan stemming pada kata-kata.
+  
+Jalankan skrip ini untuk mempersiapkan data sebelum analisis lebih lanjut.
+
+2. Analisis TF-IDF
+Skrip **Analyze_TF-IDF.py** digunakan untuk:
+
+- Menghitung representasi fitur menggunakan metode TF-IDF.
+- Menampilkan visualisasi distribusi frekuensi kata.
+
+Jalankan skrip ini untuk memahami distribusi kata dalam dataset.
+
+3. Model Random Forest Tanpa Optimasi
+Skrip  **RF_Normal.py** digunakan untuk:
+
+- Membangun model Random Forest dengan parameter default.
+- Melakukan evaluasi model menggunakan akurasi dan classification report.
+
+Jalankan skrip ini untuk mendapatkan baseline model.
+
+4. Optimasi Hyperparameter dengan Grid Search
+Skrip **Grid_Search.py** digunakan untuk:
+
+- Melakukan pencarian parameter terbaik menggunakan metode Grid Search.
+- Melakukan evaluasi model dengan parameter yang dioptimasi.
+
+Jalankan skrip ini untuk meningkatkan performa model.
+
+5. Optimasi Hyperparameter dengan Random Search
+Skrip **Random_Search.py** digunakan untuk:
+
+- Melakukan pencarian parameter terbaik menggunakan metode Random Search.
+- Melakukan evaluasi model dengan parameter yang dioptimasi.
+
+Jalankan skrip ini untuk mendapatkan model dengan performa terbaik.
+
+---
+
+## 📊 Visualisasi dan Evaluasi
+Setelah menjalankan skrip di atas, Anda dapat melakukan evaluasi model dengan:
+
+- Menampilkan confusion matrix untuk melihat distribusi prediksi.
+- Menampilkan classification report untuk metrik evaluasi seperti precision, recall, dan F1-score.
+- Menampilkan feature importance untuk mengetahui fitur mana yang paling berpengaruh.
+
+Untuk visualisasi, Anda dapat menggunakan pustaka seperti **matplotlib** dan **seaborn**.
+
+---
+
+## 💾 Menyimpan dan Menggunakan Model
+Setelah mendapatkan model terbaik, Anda dapat menyimpannya menggunakan joblib:
+
+import joblib
+joblib.dump(best_model, 'sentiment_model.pkl')
+
+Untuk memuat dan menggunakan model:
+
+import joblib
+model = joblib.load('sentiment_model.pkl')
+predictions = model.predict(new_data)
+
+Dengan mengikuti langkah-langkah di atas, Anda dapat menjalankan dan mengeksplorasi proyek analisis sentimen ini. Pastikan untuk menyesuaikan jalur file dan parameter sesuai dengan kebutuhan Anda.
