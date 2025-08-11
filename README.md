@@ -38,6 +38,11 @@ Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram ber
 
 ---
 
+## 📊 Perbandingan Akurasi Model
+![Perbandingan Akurasi](images/grafik hasil eval.png)  
+*Random Search lebih cepat dan akurat dibanding Grid Search*
+
+
 ## 🚀 **Cara Menjalankan**
 1. **Clone Repo**:
    ```bash
