@@ -3,10 +3,6 @@
 # sentiment-analyst
 Proyek analisis sentimen komentar Instagram Bahasa Indonesia dengan optimasi hyperparameter Random Forest. Mencapai akurasi 90% menggunakan Random Search dan preprocessing teks informal.
 
-Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
-![Hasil WordCloud](images/Wordcloud.png)  
-*Visualisasi kata kunci menggunakan TF-IDF*
-
 ## 🎯 **Apa Ini?**
 Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram berbahasa Indonesia dengan:
 - **Fokus Utama**: Membandingkan teknik optimasi hyperparameter (**Grid Search** vs **Random Search**) pada algoritma Random Forest.
@@ -35,6 +31,21 @@ Proyek ini membangun **model klasifikasi sentimen** untuk komentar Instagram ber
 **Insight**:  
 - Random Search **lebih efisien** (3.6x lebih cepat dari Grid Search) dengan akurasi tertinggi.
 - Preprocessing khusus (contoh: normalisasi "bgt" → "banget") meningkatkan F1-score sebesar 8%.
+
+---
+
+Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
+![Hasil WordCloud](images/Wordcloud.png)  
+*Visualisasi kata kunci menggunakan TF-IDF*
+
+---
+
+## 🔍 Confusion Matrix
+![Confusion Matrix](images/Confusion_Grid.png)
+Menunjukkan klasifikasi sentimen yang lebih akurat dengan jumlah True Positive dan True Negative lebih tinggi serta kesalahan klasifikasi lebih rendah dibandingkan Random Search.
+
+![Confusion Matrix](images/Confusion_Random.png)
+Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan False Negative sedikit lebih banyak dibandingkan Grid Search.
 
 ---
 
