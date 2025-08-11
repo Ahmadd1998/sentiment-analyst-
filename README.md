@@ -58,13 +58,13 @@ Hasil Term Weighting dari analis sentimen menggunakan TF-IDF
 ---
 
 ## 🔍 Confusion Matrix
-![Confusion Matrix](images/Confusion_Grid.png).
-*Confusion Matrix dari RF Grid Search*
+![Confusion Matrix](images/Confusion_Grid.png)
+*Confusion Matrix dari RF Grid Search*.
 
 Model hasil Grid Search memiliki True Positive dan True Negative yang lebih tinggi, sehingga kesalahan klasifikasi lebih sedikit dibanding Random Search.
 
-![Confusion Matrix](images/Confusion_Random.png).
-*Confusion Matrix dari RF Random Search*
+![Confusion Matrix](images/Confusion_Random.png)
+*Confusion Matrix dari RF Random Search*.
 
 Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan False Negative sedikit lebih banyak dibandingkan Grid Search.
 
