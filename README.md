@@ -147,68 +147,73 @@ Kesimpulan:
 ## ⚙️ Persiapan Lingkungan
 1. Clone repository:
 
-git clone https://github.com/Ahmadd1998/sentiment-analyst-.git
-cd sentiment-analyst-
+   git clone https://github.com/Ahmadd1998/sentiment-analyst-.git
+   cd sentiment-analyst-
 
 2. Install dependensi:
 
-Pastikan Anda memiliki Python versi 3.7 atau lebih baru. Kemudian, install dependensi yang diperlukan:
-
-pip install -r requirements.txt
-
-Jika file requirements.txt belum tersedia, Anda dapat membuatnya dengan menambahkan pustaka berikut:
-
-pandas
-scikit-learn
-numpy
-matplotlib
-seaborn
-joblib
+   Pastikan Anda memiliki Python versi 3.7 atau lebih baru. Kemudian, install dependensi yang diperlukan:
+   
+   pip install -r requirements.txt
+   
+   Jika file requirements.txt belum tersedia, Anda dapat membuatnya dengan menambahkan pustaka berikut:
+   
+   pandas
+   
+   scikit-learn
+   
+   numpy
+   
+   matplotlib
+   
+   seaborn
+   
+   joblib
 
 ---
 
 ## 🧠 Langkah-langkah Analisis
 1. Preprocessing Teks
-Skrip **Preprocessing.py** digunakan untuk melakukan pembersihan dan normalisasi teks komentar Instagram, termasuk:
-
-- Menghapus URL, mention, dan hashtag.
-- Mengubah teks menjadi huruf kecil.
-- Menghapus kata-kata tidak penting (stopwords).
-- Melakukan stemming pada kata-kata.
-  
-Jalankan skrip ini untuk mempersiapkan data sebelum analisis lebih lanjut.
+   Skrip **Preprocessing.py** digunakan untuk melakukan pembersihan dan normalisasi teks komentar Instagram, termasuk:
+   
+   - Menghapus URL, mention, dan hashtag.
+   - Mengubah teks menjadi huruf kecil.
+   - Menghapus kata-kata tidak penting (stopwords).
+   - Melakukan stemming pada kata-kata.
+     
+   Jalankan skrip ini untuk mempersiapkan data sebelum analisis lebih lanjut.
 
 2. Analisis TF-IDF
-Skrip **Analyze_TF-IDF.py** digunakan untuk:
-
-- Menghitung representasi fitur menggunakan metode TF-IDF.
-- Menampilkan visualisasi distribusi frekuensi kata.
-
-Jalankan skrip ini untuk memahami distribusi kata dalam dataset.
+   Skrip **Analyze_TF-IDF.py** digunakan untuk:
+   
+   - Menghitung representasi fitur menggunakan metode TF-IDF.
+   - Menampilkan visualisasi distribusi frekuensi kata.
+   
+   Jalankan skrip ini untuk memahami distribusi kata dalam dataset.
 
 3. Model Random Forest Tanpa Optimasi
-Skrip  **RF_Normal.py** digunakan untuk:
-
-- Membangun model Random Forest dengan parameter default.
-- Melakukan evaluasi model menggunakan akurasi dan classification report.
-
-Jalankan skrip ini untuk mendapatkan baseline model.
+   Skrip  **RF_Normal.py** digunakan untuk:
+   
+   - Membangun model Random Forest dengan parameter default.
+   - Melakukan evaluasi model menggunakan akurasi dan classification report.
+   
+   Jalankan skrip ini untuk mendapatkan baseline model.
 
 4. Optimasi Hyperparameter dengan Grid Search
-Skrip **Grid_Search.py** digunakan untuk:
-
-- Melakukan pencarian parameter terbaik menggunakan metode Grid Search.
-- Melakukan evaluasi model dengan parameter yang dioptimasi.
-
-Jalankan skrip ini untuk meningkatkan performa model.
+   Skrip **Grid_Search.py** digunakan untuk:
+   
+   - Melakukan pencarian parameter terbaik menggunakan metode Grid Search.
+   - Melakukan evaluasi model dengan parameter yang dioptimasi.
+   
+   Jalankan skrip ini untuk meningkatkan performa model.
 
 5. Optimasi Hyperparameter dengan Random Search
-Skrip **Random_Search.py** digunakan untuk:
-
-- Melakukan pencarian parameter terbaik menggunakan metode Random Search.
-- Melakukan evaluasi model dengan parameter yang dioptimasi.
-
-Jalankan skrip ini untuk mendapatkan model dengan performa terbaik.
+   Skrip **Random_Search.py** digunakan untuk:
+   
+   - Melakukan pencarian parameter terbaik menggunakan metode Random Search.
+   - Melakukan evaluasi model dengan parameter yang dioptimasi.
+   
+   Jalankan skrip ini untuk mendapatkan model dengan performa terbaik.
 
 ---
 
