@@ -1,1 +1,59 @@
+!pip install pandas nltk sastrawi scikit-learn
 
+import pandas as pd
+import re
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# Load data
+df = pd.read_csv('dataset_komentar_instagram_cyberbullying.csv')
+
+# Cleaning
+def clean_text(text):
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'[^\w\s]', ' ', text)
+    text = re.sub(r'\d+', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text.lower()
+
+df['cleaned_text'] = df['Instagram Comment Text'].apply(clean_text)
+
+# Normalisasi slang
+slang_dict = {
+    'yg': 'yang',
+    'ga': 'tidak',
+    'gak': 'tidak',
+    'lo': 'kamu',
+    'gw': 'saya',
+    'aja': 'saja',
+    'bgt': 'banget',
+    'skr': 'sekarang',
+    'lg': 'lagi',
+    'dll': 'dan lain-lain'
+}
+def normalize_text(text):
+    return ' '.join([slang_dict.get(word, word) for word in text.split()])
+
+df['normalized_text'] = df['cleaned_text'].apply(normalize_text)
+
+# Stopword dan stemming
+stopword_remover = StopWordRemoverFactory().create_stop_word_remover()
+stemmer = StemmerFactory().create_stemmer()
+
+def preprocess_text(text):
+    text = stopword_remover.remove(text)
+    return stemmer.stem(text)
+
+df['final_text'] = df['normalized_text'].apply(preprocess_text)
+
+print("Data siap untuk modeling!")
+print("Original:", df['Instagram Comment Text'].iloc[0])
+print("Teks setelah preprocessing:", df['final_text'].iloc[0])
+
+# prompt: menyimpan data preprosesing dalam bentuk csv
+
+# Simpan DataFrame yang telah dipreproses ke dalam file CSV baru
+df.to_csv('dataset_komentar_instagram_cyberbullying_preprocessed.csv', index=False)
+
+print("\nData setelah preprocessing telah disimpan ke: dataset_komentar_instagram_cyberbullying_preprocessed.csv")
