@@ -123,9 +123,9 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
    
    python -m venv venv
    
-   source venv/bin/activate     # Untuk Linux/Mac
+   source venv/bin/activate --- # Untuk Linux/Mac
    
-   venv\Scripts\activate        # Untuk Windows
+   venv\Scripts\activate    --- # Untuk Windows
    
 4. Install Dependencies
    
@@ -135,7 +135,7 @@ Memberikan hasil klasifikasi yang cukup baik, namun memiliki False Positive dan 
    - Letakkan file dataset CSV di folder dataset/ (jika belum ada, buat foldernya)
    - Pastikan nama file sesuai yang digunakan di script Python, contoh:
    
-   data/dataset_instagram_cyberbullying.csv
+   dataset/dataset_instagram_cyberbullying.csv
    
 6. Jalankan Script Analisis Sentimen
    
