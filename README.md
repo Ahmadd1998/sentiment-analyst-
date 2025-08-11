@@ -128,7 +128,7 @@ Kesimpulan:
 - Cocok untuk aplikasi yang meminimalkan False Positives (contoh: deteksi spam, diagnosis penyakit).
 
 2. RF Normal vs Random Search
-   | No | Metrics | t-statistic | p-value | Significant (p<0.05) |
+| No | Metrics | t-statistic | p-value | Significant (p<0.05) |
 |----|---------|------------|-----------------|---------------|
 |  1  | Accuracy | 4.221     | 0.013         |   ❌ No   |
 |  2  | Recall | 0.620   | 0.569    |   ❌ No   |   
