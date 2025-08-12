@@ -18,7 +18,7 @@ This project aims to analyze the sentiment of Indonesian-language Instagram comm
 
 ```mermaid
 flowchart TD
-A[Dataset Komentar Instagram] --> B[Preprocessing Teks]
+A[Instagram Comments Dataset] --> B[Preprocessing Teks]
 B --> C[TF-IDF Vectorization]
 C --> D[Split Data - Train/Test]
 D --> E[Optimasi Hyperparameter]
