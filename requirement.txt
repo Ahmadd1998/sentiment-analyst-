@@ -1,0 +1,17 @@
+# 📦 Dependensi Utama
+scikit-learn==1.2.2      # Untuk Random Forest, Grid/Random Search, TF-IDF
+pandas==1.5.3            # Manipulasi dataset
+numpy==1.23.5            # Operasi numerik
+
+# 🗣️ NLP & Preprocessing
+sastrawi==1.0.1          # Stemming bahasa Indonesia
+nltk==3.8.1              # Stopword removal, tokenizer
+wordcloud==1.8.2.2       # Visualisasi kata kunci
+
+# 📊 Visualisasi
+matplotlib==3.7.1        # Plot grafik evaluasi
+seaborn==0.12.2          # Style plot yang lebih menarik
+
+# ⚙️ Utility
+jupyter==1.0.0           # Untuk menjalankan notebook
+tqdm==4.65.0             # Progress bar (jika ada proses iterasi panjang)
