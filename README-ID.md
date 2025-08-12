@@ -151,10 +151,16 @@ Kesimpulan:
 ## ⚙️ Persiapan Lingkungan
 1. Clone repository:
 
+   ```bash
    git clone https://github.com/Ahmadd1998/sentiment-analyst-.git
    cd sentiment-analyst-
+   pip install -r requirements.txt
+   
+2. Buka Notebook
+   
+   jupyter notebook notebooks/sentiment_analysis.ipynb
 
-2. Install dependensi:
+3. Install dependensi:
 
    Pastikan Anda memiliki Python versi 3.7 atau lebih baru. Kemudian, install dependensi yang diperlukan:
    
