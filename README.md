@@ -150,15 +150,22 @@ Conclusion:
 ## ⚙️ Environment Preparation
 1. Clone repository:
 
+   ```bash
    git clone https://github.com/Ahmadd1998/sentiment-analyst-.git
-   
    cd sentiment-analyst-
+   pip install -r requirements.txt
+   
+2. Open Notebook
+   
+   jupyter notebook notebooks/sentiment_analysis.ipynb
 
 3. Install dependencies:
 
    Make sure you have Python version 3.7 or newer. Then, install the required dependencies:
    
+   ```bash
    pip install -r requirements.txt
+   ```
    
    If the requirements.txt file is not available, you can create it by adding the following libraries:
    
@@ -235,17 +242,18 @@ For visualization, you can use libraries such as **matplotlib** and **seaborn**.
 ## 💾 Saving and Using the Model
 After obtaining the best model, you can save it using joblib:
 
+```bash
 **import joblib**
-
 **joblib.dump(best_model, ‘sentiment_model.pkl’)**
+```
 
 To load and use the model:
 
+```bash
 **import joblib**
-
 **model = joblib.load(‘sentiment_model.pkl’)**
-
 **predictions = model.predict(new_data)**
+```
 
 By following the steps above, you can run and explore this sentiment analysis project. Make sure to adjust the file paths and parameters according to your needs.
 
