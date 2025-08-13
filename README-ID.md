@@ -255,6 +255,10 @@ Untuk memuat dan menggunakan model:
 
 Dengan mengikuti langkah-langkah di atas, Anda dapat menjalankan dan mengeksplorasi proyek analisis sentimen ini. Pastikan untuk menyesuaikan jalur file dan parameter sesuai dengan kebutuhan Anda.
 
+---
+## Kontributor
+- [Ahmad Gozali A.](https://github.com/Ahmadd1998) — Peneliti & Pengembang
+- [Abu Salam] — Pembimbing Akademik & Pemberi Ide
 
 ---
 Proyek ini dilisensikan di bawah MIT License. Jika Anda ingin berkontribusi, silakan fork repositori ini dan kirim pull request dengan perubahan yang diusulkan.
