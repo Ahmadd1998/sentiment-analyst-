@@ -257,6 +257,11 @@ To load and use the model:
 
 By following the steps above, you can run and explore this sentiment analysis project. Make sure to adjust the file paths and parameters according to your needs.
 
+---
 
+## Contributors
+- [Ahmad Gozali A.](https://github.com/Ahmadd1998) — Researcher & Developer
+- [Abu Salam] — Academic Supervisor & Idea Provider
+  
 ---
 This project is licensed under the MIT License. If you wish to contribute, please fork this repository and submit a pull request with your proposed changes.
