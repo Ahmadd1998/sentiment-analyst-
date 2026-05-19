@@ -1,0 +1,8 @@
+PySastrawi==1.2.0
+scikit-learn
+pandas
+numpy
+nltk
+wordcloud
+matplotlib
+seaborn
