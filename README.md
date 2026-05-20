@@ -1,5 +1,8 @@
 # 📊 Hyperparameter Optimization of Random Forests for Instagram Sentiment Analysis (Indonesian)
 
+## 🚀 Live Demo
+**[[https://logistics-performance-id.streamlit.app/](https://instagram-sentiment-id.streamlit.app/)]**
+
 ## Sentiment-Analyst
 
 This project aims to analyze the sentiment of Indonesian-language Instagram comments using the Random Forest algorithm, which is effective at handling complex and non-linear data. The dataset contains comments that have been labeled as positive or negative sentiment. Preprocessing is performed to clean up informal text, remove stopwords, and transform the data into features that the model can understand. Hyperparameter optimization using RandomizedSearchCV (Random Search) successfully improved accuracy to 90%, proving the effectiveness of this method in addressing the challenges of informal text sentiment analysis.
