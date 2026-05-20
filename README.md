@@ -1,7 +1,7 @@
 # 📊 Hyperparameter Optimization of Random Forests for Instagram Sentiment Analysis (Indonesian)
 
 ## 🚀 Live Demo
-**[[https://logistics-performance-id.streamlit.app/](https://instagram-sentiment-id.streamlit.app/)]**
+**[https://instagram-sentiment-id.streamlit.app/]**
 
 ## Sentiment-Analyst
 
