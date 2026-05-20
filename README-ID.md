@@ -1,5 +1,8 @@
 # 📊 Optimasi Hyperparameter Random Forest untuk Analisis Sentimen Instagram (Bahasa Indonesia)
 
+## 🚀 Live Demo
+**[https://instagram-sentiment-id.streamlit.app/]**
+
 ## Sentiment-Analyst
 
 Proyek ini bertujuan menganalisis sentimen komentar Instagram berbahasa Indonesia menggunakan algoritma Random Forest, yang efektif menangani data kompleks dan tidak linear. Dataset berisi komentar yang sudah dilabeli sentimen positif atau negatif. Preprocessing dilakukan untuk membersihkan teks informal, menghapus stopwords, dan mentransformasikan data ke fitur yang dapat dipahami model. Optimasi hyperparameter menggunakan RandomizedSearchCV (Random Search) berhasil meningkatkan akurasi hingga 90%, membuktikan efektivitas metode ini dalam mengatasi tantangan analisis sentimen teks informal.
