@@ -8,37 +8,14 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import numpy as np
 
-# ==========================================
-# SETUP PAGE
-# ==========================================
-st.set_page_config(
-    page_title="ID Instagram Sentiment Analysis",
-    page_icon="🇮🇩",
-    layout="wide"
-)
+st.set_page_config(page_title="IG Sentiment Analysis", page_icon="🇮🇩", layout="wide")
 
-# Custom CSS
+# Custom CSS biar lebih modern
 st.markdown("""
     <style>
-    .main-title { 
-        font-size: 42px !important; 
-        font-weight: bold; 
-        color: #1E40AF; 
-        text-align: center;
-        margin-bottom: 8px;
-    }
-    .sub-title { 
-        font-size: 20px !important; 
-        text-align: center; 
-        color: #475569; 
-        margin-bottom: 30px;
-    }
-    .metric-card {
-        background-color: #f8fafc;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+    .main-title {font-size: 42px !important; font-weight: bold; color: #1E40AF; text-align: center;}
+    .sub-title {font-size: 20px !important; text-align: center; color: #475569; margin-bottom: 30px;}
+    .metric {background-color: #f0f4ff; padding: 15px; border-radius: 10px; text-align: center;}
     </style>
 """, unsafe_allow_html=True)
 
@@ -46,21 +23,17 @@ st.markdown('<div class="main-title">🇮🇩 Indonesian Instagram Sentiment Ana
 st.markdown('<div class="sub-title">Undergraduate Thesis Project — Hyperparameter Optimization using Random Search</div>', unsafe_allow_html=True)
 st.write("---")
 
-# ==========================================
-# NLP COMPONENTS
-# ==========================================
+# ================== NLP & MODEL ==================
 @st.cache_resource
 def load_nlp_components():
-    factory = StemmerFactory()
-    return factory.create_stemmer()
+    return StemmerFactory().create_stemmer()
 
 stemmer = load_nlp_components()
 
 def normalize_slang(text):
     slang_dict = {
         'bgt': 'banget', 'yg': 'yang', 'pdhl': 'padahal', 'dgn': 'dengan',
-        'gw': 'saya', 'lu': 'kamu', 'gpp': 'tidak apa-apa', 'gk': 'tidak',
-        'klo': 'kalau', 'mager': 'malas gerak', 'mantul': 'mantap betul',
+        'gk': 'tidak', 'ga': 'tidak', 'klo': 'kalau', 'lu': 'kamu', 'gw': 'saya',
         'anj': 'anjing', 'bgst': 'bangsat', 'tolol': 'bodoh'
     }
     words = text.lower().split()
@@ -75,108 +48,99 @@ def clean_text(text):
     text = stemmer.stem(text)
     return text
 
-# ==========================================
-# LOAD & TRAIN MODEL
-# ==========================================
 @st.cache_data
 def train_best_model():
     df = pd.read_csv('dataset/dataset_komentar_instagram_cyberbullying.csv')
-    
     df['cleaned_text'] = df['Instagram Comment Text'].apply(clean_text)
     
     tfidf = TfidfVectorizer(max_features=500, ngram_range=(1, 2))
     X = tfidf.fit_transform(df['cleaned_text'])
     y = df['Sentiment']
     
-    # Model terbaik dari Random Search
-    model = RandomForestClassifier(
-        n_estimators=200, 
-        max_depth=25, 
-        min_samples_split=2,
-        random_state=42,
-        n_jobs=-1
-    )
+    model = RandomForestClassifier(n_estimators=200, max_depth=25, random_state=42, n_jobs=-1)
     model.fit(X, y)
-    
     return tfidf, model, df
 
-with st.spinner("⏳ Loading model & pipeline..."):
+with st.spinner("⏳ Loading model..."):
     tfidf, model, df = train_best_model()
 
-# ==========================================
-# MAIN LAYOUT
-# ==========================================
-col1, col2 = st.columns([2.2, 1])
+# ================== LAYOUT ==================
+col1, col2 = st.columns([2.3, 1])
 
 with col1:
-    st.markdown("### 📝 Uji Deteksi Sentimen Real-Time")
-    user_input = st.text_area(
-        "Masukkan komentar Instagram berbahasa Indonesia:",
-        "Produknya bagus banget, tapi sayang pengirimannya lama sekali dan customer service-nya tidak responsif.",
-        height=120
-    )
+    st.subheader("🔍 Uji Deteksi Sentimen Real-Time")
+    user_input = st.text_area("Masukkan komentar Instagram:", 
+                              "Produknya bagus banget, tapi pengirimannya lama sekali dan cs-nya tidak responsif.", height=130)
     
     if st.button("🚀 Analisis Sentimen", type="primary", use_container_width=True):
         if user_input.strip():
             cleaned = clean_text(user_input)
-            vectorized = tfidf.transform([cleaned])
-            prediction = model.predict(vectorized)[0]
-            proba = model.predict_proba(vectorized)[0]
+            vector = tfidf.transform([cleaned])
+            pred = model.predict(vector)[0]
+            proba = model.predict_proba(vector)[0]
             
             st.write("**Teks setelah preprocessing:**")
             st.code(cleaned)
             
-            if prediction.lower() in ['positive', 'positif']:
+            if pred.lower() in ['positive', 'positif']:
                 st.success(f"### POSITIF 🟢 (Probabilitas: {proba[1]:.2%})")
             else:
                 st.error(f"### NEGATIF 🔴 (Probabilitas: {proba[0]:.2%})")
         else:
-            st.warning("Masukkan teks terlebih dahulu!")
+            st.warning("Masukkan teks dulu!")
 
 with col2:
-    st.markdown("### 🏆 Ringkasan Riset")
-    st.metric("Akurasi Model", "90.00%", "↑ 7.00% dari baseline")
+    st.subheader("🏆 Ringkasan Riset")
+    st.metric("Akurasi Model", "90.00%", "↑ 7.00%")
     st.metric("Error Rate", "10.00%", "↓ 6.67%")
     
-    st.markdown("**Model Specification**")
+    st.markdown("**Spesifikasi Model**")
     st.markdown("""
-    - **Algorithm**: Random Forest Classifier  
-    - **Feature**: TF-IDF (500 features)  
+    - **Algoritma**: Random Forest Classifier  
+    - **Feature Extraction**: TF-IDF (500 fitur)  
     - **Tuning**: RandomizedSearchCV  
     - **F1-Score**: ~90% (balanced)
     """)
 
-# ==========================================
-# VISUALISASI TAMBAHAN
-# ==========================================
+# ================== VISUALISASI ==================
 st.write("---")
-st.markdown("### 📊 Contoh Visualisasi & Insight")
+st.subheader("📊 Insight dari Dataset")
 
-tab1, tab2 = st.tabs(["Word Cloud", "Contoh Kasus"])
+tab1, tab2, tab3 = st.tabs(["Word Cloud", "Distribusi Sentimen", "Contoh Kasus"])
 
 with tab1:
     col_a, col_b = st.columns(2)
     with col_a:
-        st.write("**Kata Positif**")
-        positive_text = " ".join(df[df['Sentiment'].str.lower() == 'positive']['cleaned_text'])
-        if positive_text:
-            wc = WordCloud(width=600, height=300, background_color='white').generate(positive_text)
-            fig, ax = plt.subplots()
-            ax.imshow(wc, interpolation='bilinear')
+        st.write("**Sentimen Positif**")
+        pos_text = " ".join(df[df['Sentiment'].str.lower() == 'positive']['cleaned_text'])
+        if pos_text:
+            wc = WordCloud(width=700, height=400, background_color='white', colormap='Greens').generate(pos_text)
+            fig, ax = plt.subplots(figsize=(8, 5))
+            ax.imshow(wc)
             ax.axis('off')
             st.pyplot(fig)
     
     with col_b:
-        st.write("**Kata Negatif**")
-        negative_text = " ".join(df[df['Sentiment'].str.lower() == 'negative']['cleaned_text'])
-        if negative_text:
-            wc = WordCloud(width=600, height=300, background_color='white').generate(negative_text)
-            fig, ax = plt.subplots()
-            ax.imshow(wc, interpolation='bilinear')
+        st.write("**Sentimen Negatif**")
+        neg_text = " ".join(df[df['Sentiment'].str.lower() == 'negative']['cleaned_text'])
+        if neg_text:
+            wc = WordCloud(width=700, height=400, background_color='white', colormap='Reds').generate(neg_text)
+            fig, ax = plt.subplots(figsize=(8, 5))
+            ax.imshow(wc)
             ax.axis('off')
             st.pyplot(fig)
 
 with tab2:
-    st.info("Kamu bisa tambahkan beberapa contoh kasus sulit (kata kasar, sarkasme, dll) di sini untuk menunjukkan limitasi model.")
+    sentiment_count = df['Sentiment'].value_counts()
+    fig, ax = plt.subplots(figsize=(8,5))
+    ax.pie(sentiment_count, labels=sentiment_count.index, autopct='%1.1f%%', colors=['#22c55e', '#ef4444'], startangle=90)
+    ax.set_title("Distribusi Sentimen di Dataset")
+    st.pyplot(fig)
 
-st.caption("Built by Ahmad Gozali Abbas • Undergraduate Thesis Project")
+with tab3:
+    st.subheader("Contoh Kasus")
+    st.info("Berikut beberapa contoh komentar yang menarik:")
+    sample = df.sample(6)
+    st.dataframe(sample[['Instagram Comment Text', 'Sentiment']], use_container_width=True)
+
+st.caption("Built by Ahmad Gozali Abbas • Data Analyst & Machine Learning Portfolio")
