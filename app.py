@@ -148,33 +148,22 @@ with tab2:
     
     sentiment_count = df['Sentiment'].value_counts()
     
-    # Ukuran chart lebih kecil
-    fig, ax = plt.subplots(figsize=(5.2, 4.8))
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))   # lebih kecil
     
-    # Warna: Hijau = Positif, Merah = Negatif
-    colors = ['#22c55e', '#ef4444']  # index 0 = positive, index 1 = negative
-    
+    colors = ['#22c55e', '#ef4444']
     wedges, texts, autotexts = ax.pie(
         sentiment_count.values,
         labels=None,
         autopct='%1.1f%%',
         colors=colors,
         startangle=90,
-        textprops={'fontsize': 12, 'weight': 'bold'}
+        textprops={'fontsize': 11}
     )
     
-    ax.set_title("Proporsi Sentimen Positif vs Negatif", fontsize=14, pad=20)
+    ax.set_title("Proporsi Sentimen Positif vs Negatif", fontsize=13, pad=15)
     
-    # Legend di kanan bawah
-    ax.legend(
-        wedges, 
-        ['Positif', 'Negatif'],   # urutan disesuaikan
-        title="Sentimen",
-        title_fontsize=12,
-        fontsize=11,
-        loc="center left",
-        bbox_to_anchor=(1.05, 0.5)
-    )
+    ax.legend(wedges, ['Positif', 'Negatif'], 
+              title="Sentimen", loc="center left", bbox_to_anchor=(1, 0.5))
     
     plt.tight_layout()
     st.pyplot(fig)
