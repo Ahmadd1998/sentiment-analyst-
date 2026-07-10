@@ -110,13 +110,51 @@ tab1, tab2, tab3 = st.tabs(["Word Cloud", "Distribusi Sentimen", "Contoh Kasus"]
 
 with tab1:
     col_a, col_b = st.columns(2)
+    
+    # Stopwords tambahan
+    custom_stopwords = {
+        'yang', 'dan', 'di', 'ada', 'ini', 'itu', 'dari', 'untuk', 'dengan', 'pada', 
+        'ke', 'dalam', 'juga', 'karena', 'sama', 'aku', 'kamu', 'dia', 'mereka', 
+        'username', 'yg', 'gk', 'ga', 'aja', 'saja', 'sm', 'nya', 'lah', 'deh'
+    }
+    
     with col_a:
         st.write("**Sentimen Positif**")
-        pos_text = " ".join(df[df['Sentiment'].str.lower() == 'positive']['cleaned_text'])
+        pos_text = " ".join(df[df['Sentiment'].str.lower() == 'positive']['final_text'])
         if pos_text:
-            wc = WordCloud(width=700, height=400, background_color='white', colormap='Greens').generate(pos_text)
-            fig, ax = plt.subplots(figsize=(8, 5))
-            ax.imshow(wc)
+            wc_pos = WordCloud(
+                width=750, 
+                height=420, 
+                background_color='white', 
+                colormap='Greens',
+                max_words=200,
+                stopwords=custom_stopwords,
+                min_font_size=8,
+                relative_scaling=0.5
+            ).generate(pos_text)
+            
+            fig, ax = plt.subplots(figsize=(9, 6))
+            ax.imshow(wc_pos)
+            ax.axis('off')
+            st.pyplot(fig)
+    
+    with col_b:
+        st.write("**Sentimen Negatif**")
+        neg_text = " ".join(df[df['Sentiment'].str.lower() == 'negative']['final_text'])
+        if neg_text:
+            wc_neg = WordCloud(
+                width=750, 
+                height=420, 
+                background_color='white', 
+                colormap='Reds',
+                max_words=200,
+                stopwords=custom_stopwords,
+                min_font_size=8,
+                relative_scaling=0.5
+            ).generate(neg_text)
+            
+            fig, ax = plt.subplots(figsize=(9, 6))
+            ax.imshow(wc_neg)
             ax.axis('off')
             st.pyplot(fig)
     
@@ -131,10 +169,23 @@ with tab1:
             st.pyplot(fig)
 
 with tab2:
+    st.subheader("Distribusi Sentimen di Dataset")
+    
     sentiment_count = df['Sentiment'].value_counts()
-    fig, ax = plt.subplots(figsize=(8,5))
-    ax.pie(sentiment_count, labels=sentiment_count.index, autopct='%1.1f%%', colors=['#22c55e', '#ef4444'], startangle=90)
-    ax.set_title("Distribusi Sentimen di Dataset")
+    
+    fig, ax = plt.subplots(figsize=(7, 5.5))   # ukuran lebih kecil
+    colors = ['#22c55e', '#ef4444']
+    wedges, texts, autotexts = ax.pie(
+        sentiment_count, 
+        labels=sentiment_count.index, 
+        autopct='%1.1f%%', 
+        colors=colors, 
+        startangle=90
+    )
+    
+    # Tambah legend di luar
+    ax.legend(wedges, sentiment_count.index, title="Sentimen", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+    ax.set_title("Proporsi Sentimen Positif vs Negatif")
     st.pyplot(fig)
 
 with tab3:
