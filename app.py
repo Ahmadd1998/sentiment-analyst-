@@ -111,28 +111,20 @@ tab1, tab2, tab3 = st.tabs(["Word Cloud", "Distribusi Sentimen", "Contoh Kasus"]
 with tab1:
     col_a, col_b = st.columns(2)
     
-    # Stopwords tambahan
     custom_stopwords = {
-        'yang', 'dan', 'di', 'ada', 'ini', 'itu', 'dari', 'untuk', 'dengan', 'pada', 
-        'ke', 'dalam', 'juga', 'karena', 'sama', 'aku', 'kamu', 'dia', 'mereka', 
-        'username', 'yg', 'gk', 'ga', 'aja', 'saja', 'sm', 'nya', 'lah', 'deh'
+        'yang', 'dan', 'di', 'ada', 'ini', 'itu', 'dari', 'untuk', 'dengan', 'pada',
+        'ke', 'dalam', 'juga', 'karena', 'sama', 'aku', 'kamu', 'dia', 'mereka',
+        'username', 'yg', 'gk', 'ga', 'aja', 'saja', 'sm', 'nya', 'lah', 'deh', 'lo'
     }
     
     with col_a:
         st.write("**Sentimen Positif**")
-        pos_text = " ".join(df[df['Sentiment'].str.lower() == 'positive']['final_text'])
+        pos_text = " ".join(df[df['Sentiment'].str.lower() == 'positive']['cleaned_text'])
         if pos_text:
             wc_pos = WordCloud(
-                width=750, 
-                height=420, 
-                background_color='white', 
-                colormap='Greens',
-                max_words=200,
-                stopwords=custom_stopwords,
-                min_font_size=8,
-                relative_scaling=0.5
+                width=750, height=420, background_color='white', colormap='Greens',
+                max_words=180, stopwords=custom_stopwords, min_font_size=8
             ).generate(pos_text)
-            
             fig, ax = plt.subplots(figsize=(9, 6))
             ax.imshow(wc_pos)
             ax.axis('off')
@@ -140,31 +132,14 @@ with tab1:
     
     with col_b:
         st.write("**Sentimen Negatif**")
-        neg_text = " ".join(df[df['Sentiment'].str.lower() == 'negative']['final_text'])
-        if neg_text:
-            wc_neg = WordCloud(
-                width=750, 
-                height=420, 
-                background_color='white', 
-                colormap='Reds',
-                max_words=200,
-                stopwords=custom_stopwords,
-                min_font_size=8,
-                relative_scaling=0.5
-            ).generate(neg_text)
-            
-            fig, ax = plt.subplots(figsize=(9, 6))
-            ax.imshow(wc_neg)
-            ax.axis('off')
-            st.pyplot(fig)
-    
-    with col_b:
-        st.write("**Sentimen Negatif**")
         neg_text = " ".join(df[df['Sentiment'].str.lower() == 'negative']['cleaned_text'])
         if neg_text:
-            wc = WordCloud(width=700, height=400, background_color='white', colormap='Reds').generate(neg_text)
-            fig, ax = plt.subplots(figsize=(8, 5))
-            ax.imshow(wc)
+            wc_neg = WordCloud(
+                width=750, height=420, background_color='white', colormap='Reds',
+                max_words=180, stopwords=custom_stopwords, min_font_size=8
+            ).generate(neg_text)
+            fig, ax = plt.subplots(figsize=(9, 6))
+            ax.imshow(wc_neg)
             ax.axis('off')
             st.pyplot(fig)
 
